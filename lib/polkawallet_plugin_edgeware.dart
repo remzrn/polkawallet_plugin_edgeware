@@ -64,7 +64,7 @@ class PluginEdgeware extends PolkawalletPlugin {
               'packages/polkawallet_plugin_edgeware/assets/images/public/edgeware.png'),
           iconDisabled: Image.asset(
               'packages/polkawallet_plugin_edgeware/assets/images/public/edgeware_gray.png'),
-          jsCodeVersion: 11301,
+          jsCodeVersion: 20101,
           isTestNet: false,
         ),
         recoveryEnabled = false,
