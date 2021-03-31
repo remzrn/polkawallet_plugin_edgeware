@@ -6,6 +6,7 @@ export default {
     Polkadot: "polkadot",
     "Polkadot CC1": "polkadot-cc1",
     Westend: "westend",
+    Edgeware: "edgeware",
   },
   create: (chain: string, path: string, data: any) =>
     `https://${chain}.subscan.io/${path}/${data.toString()}`,

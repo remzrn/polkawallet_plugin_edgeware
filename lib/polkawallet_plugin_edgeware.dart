@@ -165,9 +165,16 @@ class PluginEdgeware extends PolkawalletPlugin {
     await GetStorage.init(plugin_edgeware_storage_key);
 
     _store = PluginStore(_cache);
-    _store.staking.loadCache(keyring.current.pubKey);
-    _store.gov.clearState();
-    _store.gov.loadCache();
+
+    try {
+      _store.staking.loadCache(keyring.current.pubKey);
+      _store.gov.clearState();
+      _store.gov.loadCache();
+      print('edgeware plugin cache data loaded');
+    } catch (err) {
+      print(err);
+      print('load edgeware cache data failed');
+    }
 
     _service = PluginApi(this, keyring);
   }
