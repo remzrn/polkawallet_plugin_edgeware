@@ -117,7 +117,7 @@ class Gov extends StatelessWidget {
                                 'packages/polkawallet_plugin_edgeware/assets/images/public/hero_icon.png',
                                 width: 56,
                               ),
-                              color: Colors.deepPurple,
+                              color: Colors.purple,
                             ),
                             onTap: () => Navigator.of(context).pushNamed(
                               DAppWrapperPage.route,

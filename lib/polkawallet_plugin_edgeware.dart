@@ -56,8 +56,8 @@ class PluginEdgeware extends PolkawalletPlugin {
       : basic = PluginBasicData(
           name: 'edgeware',
           ss58: 7,
-          primaryColor: Colors.green,
-          gradientColor: Colors.lightGreen,
+          primaryColor: Colors.blue,
+          gradientColor: Colors.cyan,
           backgroundImage: AssetImage(
               'packages/polkawallet_plugin_edgeware/assets/images/public/bg_edgeware.png'),
           icon: Image.asset(
