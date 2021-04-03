@@ -54,7 +54,7 @@ class StakingDetailPage extends StatelessWidget {
               }
               return '0x${Fmt.address(e['Id'])}';
             }).toList();
-            value = jsonEncode(pubKeys);
+            value = pubKeys.join(',\n');
             break;
         }
         return TxDetailInfoItem(

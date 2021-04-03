@@ -226,7 +226,9 @@ class _TipDetailPageState extends State<TipDetailPage> {
     bool isTipped = tipData.tips.length > 0;
     int blockTime = 6000;
     if (widget.plugin.networkConst['treasury'] != null) {
-      blockTime = widget.plugin.networkConst['timestamp']['minimumPeriod'] * 2;
+      blockTime =
+          int.parse(widget.plugin.networkConst['timestamp']['minimumPeriod']) *
+              2;
     }
 
     final List<BigInt> values =
