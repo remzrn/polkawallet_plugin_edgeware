@@ -41,6 +41,22 @@ const node_list_edgeware = [
   },
 ];
 
+const MaterialColor edgeware_jaco_blue = const MaterialColor(
+  0xFF0A95DF,
+  const <int, Color>{
+    50: const Color(0xFFE2F2FB),
+    100: const Color(0xFFB6DFF5),
+    200: const Color(0xFF85CAEF),
+    300: const Color(0xFF54B5E9),
+    400: const Color(0xFF2FA5E4),
+    500: const Color(0xFF0A95DF),
+    600: const Color(0xFF098DDB),
+    700: const Color(0xFF0782D7),
+    800: const Color(0xFF0578D2),
+    900: const Color(0xFF0367CA),
+  },
+);
+
 const home_nav_items = ['staking', 'governance'];
 
 const String network_name_edgeware = 'edgeware';
