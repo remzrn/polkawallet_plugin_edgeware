@@ -39,6 +39,16 @@ const node_list_edgeware = [
     'ss58': 7,
     'endpoint': 'wss://mainnet7.edgewa.re/',
   },
+  {
+    'name': 'Edgeware Mainnet #8 (hosted by Commonwealth Labs)',
+    'ss58': 7,
+    'endpoint': 'wss://mainnet8.edgewa.re/',
+  },
+  {
+    'name': 'Edgeware Mainnet #9 (hosted by Commonwealth Labs)',
+    'ss58': 7,
+    'endpoint': 'wss://mainnet9.edgewa.re/',
+  },
 ];
 
 const MaterialColor edgeware_jaco_blue = const MaterialColor(

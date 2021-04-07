@@ -39,9 +39,15 @@ class StakingDetailPage extends StatelessWidget {
             break;
           case "AccountId":
             value = value.contains('0x') ? value : '0x$value';
-            String address = plugin.store.accounts
-                .pubKeyAddressMap[plugin.sdk.api.connectedNode.ss58][value];
-            value = Fmt.address(address);
+            Map<String, String> pkaMap = plugin.store.accounts
+                .pubKeyAddressMap[plugin.sdk.api.connectedNode.ss58];
+            if (null != pkaMap) {
+              String address = pkaMap[value];
+              if (null != address) {
+                value = address;
+              }
+            }
+            value = Fmt.address(value);
             break;
           case "RewardDestination<AccountId>":
             value = 'Account: ${Fmt.address(i['value']['Account'])}';

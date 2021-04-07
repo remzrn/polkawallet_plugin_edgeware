@@ -376,6 +376,7 @@ async function signTxAsExtension(password: string, json: any) {
         keyPair.lock();
       }
       keyPair.decodePkcs8(password);
+
       let registry: any;
       if (!(<any>window).api) {
         registry = new TypeRegistry();

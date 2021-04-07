@@ -20,13 +20,12 @@ function send(path: string, data: any) {
 send("log", "main js loaded");
 (<any>window).send = send;
 
-
 /**
  * connect to a specific node.
  *
  * @param {string} nodeEndpoint
  */
-async function connect(nodes: string[]) {  
+async function connect(nodes: string[]) {
   return new Promise(async (resolve, reject) => {
     const wsProvider = new WsProvider(nodes);
     try {
