@@ -36,5 +36,6 @@ export async function getNetworkProperties(api: ApiPromise) {
         tokenDecimals: [18],
         tokenSymbol: ["EDG"],
         name: "edgeware",
+        genesisHash: SubstrateNetworkKeys.EDGEWARE,
       };
 }

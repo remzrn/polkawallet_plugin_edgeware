@@ -69,4 +69,6 @@ const MaterialColor edgeware_jaco_blue = const MaterialColor(
 
 const home_nav_items = ['staking', 'governance'];
 
+const String genesis_hash_edgeware =
+    '0x742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b';
 const String network_name_edgeware = 'edgeware';

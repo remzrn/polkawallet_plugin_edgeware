@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'package:intl/intl.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:polkawallet_plugin_edgeware/pages/staking/validators/validatorDetailPage.dart';
@@ -25,12 +25,12 @@ class NominateForm extends StatefulWidget {
 }
 
 class _NominateFormState extends State<NominateForm> {
-  final List<ValidatorData> _selected = List<ValidatorData>();
-  final List<ValidatorData> _notSelected = List<ValidatorData>();
+  final List<ValidatorData> _selected = [];
+  final List<ValidatorData> _notSelected = [];
   Map<String, bool> _selectedMap = Map<String, bool>();
 
-  String _filter = '';
-  int _sort = 0;
+  String _search = '';
+  List<bool> _filters = [true, false];
 
   void _setNominee() {
     final dicStaking =
@@ -61,6 +61,7 @@ class _NominateFormState extends State<NominateForm> {
       color: Theme.of(context).unselectedWidgetColor,
       fontSize: 12,
     );
+    final comm = NumberFormat('0.00%').format(validator.commission / 100);
     return GestureDetector(
       child: Container(
         padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
@@ -80,7 +81,7 @@ class _NominateFormState extends State<NominateForm> {
                     accInfo,
                   ),
                   Text(
-                    '${dicStaking['commission']}: ${validator.commission}',
+                    '${dicStaking['commission']}: $comm',
                     style: textStyle,
                   ),
                   Row(
@@ -182,11 +183,10 @@ class _NominateFormState extends State<NominateForm> {
     List<ValidatorData> retained = List.of(_notSelected);
     // filter the blocking validators
     retained.removeWhere((e) => e.isBlocking);
-    retained = PluginFmt.filterValidatorList(
-        retained, _filter, widget.plugin.store.accounts.addressIndexMap);
+    retained = PluginFmt.filterValidatorList(retained, _filters, _search,
+        widget.plugin.store.accounts.addressIndexMap);
     // and sort it
-    retained.sort((a, b) => PluginFmt.sortValidatorList(
-        widget.plugin.store.accounts.addressIndexMap, a, b, _sort));
+    retained.sort((a, b) => a.rankReward < b.rankReward ? 1 : -1);
     list.addAll(retained);
 
     return Column(
@@ -195,17 +195,18 @@ class _NominateFormState extends State<NominateForm> {
           color: Theme.of(context).cardColor,
           padding: EdgeInsets.only(top: 8, bottom: 8),
           child: ValidatorListFilter(
-            onFilterChange: (v) {
-              if (_filter != v) {
+            filters: _filters,
+            onSearchChange: (v) {
+              if (_search != v) {
                 setState(() {
-                  _filter = v;
+                  _search = v;
                 });
               }
             },
-            onSortChange: (v) {
-              if (_sort != v) {
+            onFilterChange: (v) {
+              if (_filters != v) {
                 setState(() {
-                  _sort = v;
+                  _filters = v;
                 });
               }
             },

@@ -55,6 +55,7 @@ class PluginEdgeware extends PolkawalletPlugin {
   PluginEdgeware()
       : basic = PluginBasicData(
           name: 'edgeware',
+          genesisHash: genesis_hash_edgeware,
           ss58: 7,
           primaryColor: edgeware_jaco_blue,
           gradientColor: Colors.cyan,
