@@ -49,6 +49,7 @@ class PluginFmt {
       if (filters[0]) {
         if (i.commission > 20) return false;
       }
+
       // filters[1], only with an ID
       final Map accInfo = accIndexMap[i.accountId];
       if (filters[1]) {

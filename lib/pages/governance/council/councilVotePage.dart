@@ -28,7 +28,7 @@ class _CouncilVote extends State<CouncilVotePage> {
 
   final TextEditingController _amountCtrl = new TextEditingController();
 
-  List<List> _selected = List<List>();
+  List<List> _selected = [];
 
   Future<void> _handleCandidateSelect() async {
     var res = await Navigator.of(context)

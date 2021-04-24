@@ -1,6 +1,6 @@
 name: polkawallet_plugin_edgeware
 description: The edgeware network flutter plugin for polkawallet app.
-version: 0.0.1
+version: 0.1.6
 homepage:
 
 environment:

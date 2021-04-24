@@ -34,7 +34,6 @@ class StakingOverviewPage extends StatefulWidget {
   StakingOverviewPage(this.plugin, this.keyring);
   final PluginEdgeware plugin;
   final Keyring keyring;
-
   @override
   _StakingOverviewPageState createState() => _StakingOverviewPageState();
 }

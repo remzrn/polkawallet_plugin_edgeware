@@ -23,8 +23,8 @@ class CandidateListPage extends StatefulWidget {
 }
 
 class _CandidateList extends State<CandidateListPage> {
-  final List<List> _selected = List<List>();
-  final List<List> _notSelected = List<List>();
+  final List<List> _selected = [];
+  final List<List> _notSelected = [];
   Map<String, bool> _selectedMap = Map<String, bool>();
 
   String _filter = '';

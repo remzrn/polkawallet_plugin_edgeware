@@ -42,7 +42,7 @@ class _ProposalsState extends State<MoneyTips> {
   Widget build(BuildContext context) {
     return Observer(
       builder: (BuildContext context) {
-        final tips = List<TreasuryTipData>();
+        final tips = [];
         if (widget.plugin.store.gov.treasuryTips != null) {
           tips.addAll(widget.plugin.store.gov.treasuryTips.reversed);
         }

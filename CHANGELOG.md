@@ -1,7 +1,3 @@
-## [0.0.7] - 20210112.
+## [0.1.6] - 20210424.
 
-* update dependency polkawallet_sdk: 0.0.7.
-
-## [0.1.3] - 20210324.
-
-* update dependency polkawallet_sdk: 0.1.3.
+* Synchronized to Kusama plugin version [0.1.6] 20210423
