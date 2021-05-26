@@ -239,7 +239,7 @@ class _StakingActions extends State<StakingActions> {
       }
     }
 
-    final decimals = widget.plugin.networkState.tokenDecimals[0];
+    final decimals = (widget.plugin.networkState.tokenDecimals ?? [18])[0];
 
     final info = widget.plugin.balances.native;
     final freeBalance = info?.freeBalance == null
@@ -902,12 +902,12 @@ class StakingActionsPanel extends StatelessWidget {
                         child: Text(
                           dic['action.redeem'],
                           style: TextStyle(
-                            color: redeemable == BigInt.zero
+                            color: redeemable == BigInt.zero || !isController
                                 ? disabledColor
                                 : actionButtonColor,
                           ),
                         ),
-                        onPressed: redeemable == BigInt.zero
+                        onPressed: redeemable == BigInt.zero || !isController
                             ? () => {}
                             : () {
                                 Navigator.of(context).pop();
