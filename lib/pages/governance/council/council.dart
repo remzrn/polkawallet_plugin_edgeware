@@ -43,8 +43,10 @@ class _CouncilState extends State<Council> {
 
   Future<void> _submitCancelVotes() async {
     final govDic = I18n.of(context).getDic(i18n_full_dic_edgeware, 'gov');
+    final moduleName = await widget.plugin.service.getRuntimeModuleName(
+        ['electionsPhragmen', 'elections', 'phragmenElection']);
     final params = TxConfirmParams(
-      module: 'elections',
+      module: moduleName,
       call: 'removeVoter',
       txTitle: govDic['vote.remove'],
       txDisplay: {},
@@ -96,7 +98,7 @@ class _CouncilState extends State<Council> {
   }
 
   Widget _buildTopCard(String tokenView) {
-    final decimals = widget.plugin.networkState.tokenDecimals[0] ?? 18;
+    final decimals = widget.plugin.networkState.tokenDecimals[0] ?? '18';
     final dic = I18n.of(context).getDic(i18n_full_dic_edgeware, 'gov');
 
     final userVotes = widget.plugin.store.gov.userCouncilVotes;
@@ -125,8 +127,8 @@ class _CouncilState extends State<Council> {
               InfoItem(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 title: dic['up'],
-                content:
-                    widget.plugin.store.gov.council.runnersUp.length.toString(),
+                content: widget.plugin.store.gov.council.runnersUp?.length
+                    ?.toString(),
               ),
               InfoItem(
                 crossAxisAlignment: CrossAxisAlignment.center,
