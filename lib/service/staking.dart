@@ -79,6 +79,7 @@ class ApiStaking {
   Future<Map> updateStakingRewards() async {
     final res = await api.subScan.fetchRewardTxsAsync(
       page: 0,
+      size: 20,
       sender: keyring.current.address,
       network: plugin.basic.name,
     );
@@ -108,17 +109,11 @@ class ApiStaking {
   }
 
   Future<Map> queryValidatorRewards(String accountId) async {
-    int timestamp = DateTime.now().second;
-    Map cached = store.staking.rewardsChartDataCache[accountId];
-    if (cached != null && cached['timestamp'] > timestamp - 1800) {
-      return cached;
-    }
     print('fetching rewards chart data');
     Map data = await api.staking.loadValidatorRewardsData(accountId);
     if (data != null) {
       // format rewards data & set cache
       Map chartData = PluginFmt.formatRewardsChartData(data);
-      chartData['timestamp'] = timestamp;
       store.staking.setRewardsChartData(accountId, chartData);
     }
     return data;

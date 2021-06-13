@@ -12,7 +12,7 @@ import BN from "bn.js";
 
 import { getInflationParams, Inflation } from './inflation';
 
-const divisor = new BN("1".padEnd(12 + 1, "0"));
+const divisor = new BN("1".padEnd(18 + 1, "0"));
 
 function _balanceToNumber(amount: BN) {
   return (
@@ -123,7 +123,7 @@ async function loadValidatorRewardsData(api: ApiPromise, validatorId: string) {
   const erasRewards = await api.derive.staking.erasRewards();
   const stakerPoints = await api.derive.staking.stakerPoints(validatorId, true);
   const ownExposure = await api.derive.staking.ownExposures(validatorId, true);
-
+  
   const points = _extractPoints(stakerPoints);
   const rewards = _extractRewards(erasRewards, ownSlashes, stakerPoints);
   const stakes = _extractStake(ownExposure);

@@ -35,6 +35,7 @@ import 'package:polkawallet_plugin_edgeware/pages/staking/actions/stakePage.dart
 import 'package:polkawallet_plugin_edgeware/pages/staking/actions/stakingDetailPage.dart';
 import 'package:polkawallet_plugin_edgeware/pages/staking/actions/unbondPage.dart';
 import 'package:polkawallet_plugin_edgeware/pages/staking/validators/nominatePage.dart';
+import 'package:polkawallet_plugin_edgeware/pages/staking/validators/validatorChartsPage.dart';
 import 'package:polkawallet_plugin_edgeware/pages/staking/validators/validatorDetailPage.dart';
 import 'package:polkawallet_plugin_edgeware/service/index.dart';
 import 'package:polkawallet_plugin_edgeware/store/cache/storeCache.dart';
@@ -65,7 +66,7 @@ class PluginEdgeware extends PolkawalletPlugin {
               'packages/polkawallet_plugin_edgeware/assets/images/public/edgeware.png'),
           iconDisabled: Image.asset(
               'packages/polkawallet_plugin_edgeware/assets/images/public/edgeware_gray.png'),
-          jsCodeVersion: 20601,
+          jsCodeVersion: 20701,
           isTestNet: false,
         ),
         recoveryEnabled = false,
@@ -129,6 +130,7 @@ class PluginEdgeware extends PolkawalletPlugin {
       StakingDetailPage.route: (_) => StakingDetailPage(this, keyring),
       RewardDetailPage.route: (_) => RewardDetailPage(this, keyring),
       ValidatorDetailPage.route: (_) => ValidatorDetailPage(this, keyring),
+      ValidatorChartsPage.route: (_) => ValidatorChartsPage(this, keyring),
 
       // governance pages
       DemocracyPage.route: (_) => DemocracyPage(this, keyring),
