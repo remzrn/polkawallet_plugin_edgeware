@@ -38,6 +38,7 @@ class _RedeemPageState extends State<RedeemPage> {
     final dic = I18n.of(context).getDic(i18n_full_dic_edgeware, 'common');
     final dicStaking =
         I18n.of(context).getDic(i18n_full_dic_edgeware, 'staking');
+    final symbol = widget.plugin.networkState.tokenSymbol[0];
     final decimals = widget.plugin.networkState.tokenDecimals[0];
 
     final redeemable = Fmt.balance(
@@ -64,7 +65,7 @@ class _RedeemPageState extends State<RedeemPage> {
                     TextFormField(
                       decoration: InputDecoration(
                         hintText: dic['amount'],
-                        labelText: dic['amount'],
+                        labelText: '${dic['amount']}($symbol)',
                       ),
                       initialValue: redeemable,
                       readOnly: true,
@@ -86,7 +87,7 @@ class _RedeemPageState extends State<RedeemPage> {
                                 call: 'withdrawUnbonded',
                                 txDisplay: {
                                   'spanCount': _slashingSpans,
-                                  'amount': redeemable
+                                  'amount': '$redeemable $symbol'
                                 },
                                 params: [_slashingSpans],
                               );

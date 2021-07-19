@@ -2,7 +2,7 @@ const Map<String, String> enStaking = {
   'overview': 'Overview',
   'overview.total': 'Total staked',
   'overview.reward': 'Returns',
-  'overview.min': 'Min nominated',
+  'overview.min': 'Min nominated/bond',
   'actions': 'Account Actions',
   'validators': 'Validators',
   'validator': 'Validator',
@@ -19,10 +19,11 @@ const Map<String, String> enStaking = {
   'stake.ratio': 'Staked',
   'stake.own': 'Own',
   'stake.other': 'Other',
+  'stake.bond.min': 'Min nominator bond',
   'stake.warn':
       '1: The bonded Tokens will be locked for about 14 days after unbonding.\n'
           '2: Your account should always have transferable balance for paying tx fees, so do not bond all your tokens.\n'
-          '3: The amount of bonded Tokens needs to meet the minimum requirements(see page: Validators), otherwise no reward will be generated.',
+          '3: The amount of bonded Tokens needs to meet the minimum requirements(see page: Validators).',
   'stake.payee.warn':
       'Tips: The balance of the destination account should not be 0, otherwise you may lose your reward due to existential deposit not met.',
   'staked': 'Staked',
@@ -66,6 +67,8 @@ const Map<String, String> enStaking = {
   'bond.unlocking': 'Unlocking',
   'bond.reward': 'Reward',
   'bond.redeemable': 'Redeemable',
+  'bond.unbond.min':
+      'Remaining bond is lower than the min nomination amount, please cancel the nomination first.',
   'payout': 'Payouts',
   'reward.Staked': 'Stash account (increase the amount at stake)',
   'reward.Stash': 'Stash account (do not increase the amount at stake)',
@@ -89,6 +92,7 @@ const Map<String, String> enStaking = {
   'nominate.over': 'Oversubscribed',
   'nominate.inactive': 'Inactive',
   'nominate.waiting': 'Waiting',
+  'nominate.max': 'Max nomination number is 128.',
   'phala': 'Phala Airdrop',
   'recommend': 'Recommended',
 };

@@ -1,17 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:polkawallet_plugin_edgeware/polkawallet_plugin_edgeware.dart';
 import 'package:polkawallet_plugin_edgeware_example/pages/assetsContent.dart';
+import 'package:polkawallet_plugin_edgeware_example/pages/homePage.dart';
 import 'package:polkawallet_plugin_edgeware_example/pages/profileContent.dart';
 import 'package:polkawallet_plugin_edgeware_example/pages/selectListPage.dart';
-
 import 'package:polkawallet_sdk/api/types/networkParams.dart';
 import 'package:polkawallet_sdk/plugin/index.dart';
 import 'package:polkawallet_sdk/storage/keyring.dart';
 import 'package:polkawallet_sdk/storage/types/keyPairData.dart';
 import 'package:polkawallet_sdk/utils/i18n.dart';
-import 'package:polkawallet_plugin_edgeware/polkawallet_plugin_edgeware.dart';
-import 'package:polkawallet_plugin_edgeware_example/pages/homePage.dart';
 import 'package:polkawallet_ui/components/passwordInputDialog.dart';
 import 'package:polkawallet_ui/pages/accountListPage.dart';
 import 'package:polkawallet_ui/pages/qrSenderPage.dart';
@@ -97,7 +96,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> _startPlugin() async {
-    await _keyring.init();
+    await _keyring.init([7]);
 
     await _network.beforeStart(_keyring);
     final connected = await _network.start(_keyring);
