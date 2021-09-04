@@ -1,6 +1,6 @@
 name: polkawallet_plugin_edgeware
 description: The edgeware network flutter plugin for polkawallet app.
-version: 0.2.5
+version: 0.3.0
 homepage:
 
 environment:
@@ -12,17 +12,21 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.0
   charts_flutter: ^0.10.0
+  # charts_flutter:
+  #   git:
+  #     url: https://github.com/google/charts
+  #     path: charts_flutter
   http: ^0.13.0
   mobx: ^2.0.1
   flutter_mobx: ^2.0.0
   flutter_svg: ^0.22.0
   get_storage: ^2.0.2
   json_annotation: ^4.0.1
-  polkawallet_sdk: ^0.2.5
+  polkawallet_sdk: ^0.3.0
   polkawallet_ui:
     git:
       url: https://github.com/polkawallet-io/ui.git
-      ref: 144a244b038e56aead4fc97a189057819bfeab08
+      ref: 485a9cde97f2446d74a1aeb6d8d63e33683461a5
     # path: ../ui
 
 dev_dependencies:

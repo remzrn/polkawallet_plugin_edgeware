@@ -175,6 +175,7 @@ class _StakingOverviewPageState extends State<StakingOverviewPage> {
   Widget _buildTopCard(BuildContext context) {
     final dicStaking =
         I18n.of(context).getDic(i18n_full_dic_edgeware, 'staking');
+    final symbol = (widget.plugin.networkState.tokenSymbol ?? ['EDG'])[0];
     final decimals = (widget.plugin.networkState.tokenDecimals ?? [18])[0];
     final stashInfo = widget.plugin.store.staking.ownStashInfo;
     final overview = widget.plugin.store.staking.overview;

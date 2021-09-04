@@ -28,7 +28,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.7.0"
+    version: "2.8.2"
   auth_header:
     dependency: transitive
     description:
@@ -196,7 +196,7 @@ packages:
       name: dropdown_search
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.9"
+    version: "0.6.3"
   fake_async:
     dependency: transitive
     description:
@@ -437,7 +437,7 @@ packages:
       name: matcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.10"
+    version: "0.12.11"
   meta:
     dependency: transitive
     description:
@@ -584,16 +584,16 @@ packages:
       name: polkawallet_sdk
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.5"
+    version: "0.3.0"
   polkawallet_ui:
     dependency: "direct main"
     description:
       path: "."
-      ref: "144a244b038e56aead4fc97a189057819bfeab08"
-      resolved-ref: "144a244b038e56aead4fc97a189057819bfeab08"
+      ref: "485a9cde97f2446d74a1aeb6d8d63e33683461a5"
+      resolved-ref: "485a9cde97f2446d74a1aeb6d8d63e33683461a5"
       url: "https://github.com/polkawallet-io/ui.git"
     source: git
-    version: "0.2.5"
+    version: "0.3.0"
   pool:
     dependency: transitive
     description:
@@ -754,7 +754,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.2"
+    version: "0.4.3"
   timing:
     dependency: transitive
     description:
