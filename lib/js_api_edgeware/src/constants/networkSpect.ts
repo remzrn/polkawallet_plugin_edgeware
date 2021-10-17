@@ -91,7 +91,6 @@ const substrateNetworkMetas = Object.values({
   ...SUBSTRATE_NETWORK_LIST,
   ...UNKNOWN_NETWORK,
 });
-
 export const PATH_IDS_LIST = substrateNetworkMetas.map((meta: any) => meta.pathId);
 
 export const NETWORK_LIST = Object.freeze(Object.assign({}, SUBSTRATE_NETWORK_LIST, [], UNKNOWN_NETWORK));
@@ -99,7 +98,7 @@ export const NETWORK_LIST = Object.freeze(Object.assign({}, SUBSTRATE_NETWORK_LI
 export const defaultNetworkKey = SubstrateNetworkKeys.EDGEWARE;
 
 function getGenesis(name: string): string {
-  const network = networks.find(({ network }) => network === name);
+  const network = allNetworks.find(({ network }) => network === name);
   assert(network && network.genesisHash[0], `Unable to find genesisHash for ${name}`);
   return network.genesisHash[0];
 }

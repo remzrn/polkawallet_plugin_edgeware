@@ -30,7 +30,7 @@ dependencies:
     git:
       url: https://github.com/polkawallet-io/ui.git
       ref: 485a9cde97f2446d74a1aeb6d8d63e33683461a5
-  #  path: ../../ui
+    # path: ../../ui
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

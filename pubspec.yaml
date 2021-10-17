@@ -11,11 +11,11 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.0
-  charts_flutter: ^0.10.0
-  # charts_flutter:
-  #   git:
-  #     url: https://github.com/google/charts
-  #     path: charts_flutter
+  # charts_flutter: ^0.10.0
+  charts_flutter:
+    git:
+      url: https://github.com/google/charts
+      path: charts_flutter
   http: ^0.13.0
   mobx: ^2.0.1
   flutter_mobx: ^2.0.0
@@ -23,6 +23,8 @@ dependencies:
   get_storage: ^2.0.2
   json_annotation: ^4.0.1
   polkawallet_sdk: ^0.3.0
+  # polkawallet_sdk:
+  #   path: ../sdk
   polkawallet_ui:
     git:
       url: https://github.com/polkawallet-io/ui.git
@@ -36,11 +38,11 @@ dev_dependencies:
   flutter_test:
     sdk: flutter 
 
-# dependency_overrides:
-#   polkawallet_ui:
-#     path: ../ui
-#   polkawallet_sdk:
-#     path: ../sdk
+dependency_overrides:
+  polkawallet_ui:
+    path: ../ui
+  polkawallet_sdk:
+    path: ../sdk
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

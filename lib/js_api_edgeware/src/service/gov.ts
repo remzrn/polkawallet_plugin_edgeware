@@ -23,10 +23,11 @@ function _extractMetaData(value: FunctionMetadataLatest) {
 
 function _transfromProposalMeta(proposal: any): {} {
   const { meta } = proposal.registry.findMetaCall(proposal.callIndex);
+  const docs = meta.documentation || meta.docs;
   let doc = "";
-  for (let i = 0; i < meta.documentation.length; i++) {
-    if (meta.documentation[i].length) {
-      doc += meta.documentation[i];
+  for (let i = 0; i < docs.length; i++) {
+    if (docs[i].length) {
+      doc += docs[i];
     } else {
       break;
     }
@@ -212,7 +213,7 @@ async function getTreasuryTips(api: ApiPromise) {
  * make an extrinsic of treasury proposal submission for council member.
  */
 async function makeTreasuryProposalSubmission(api: ApiPromise, id: any, isReject: boolean): Promise<SubmittableExtrinsic<"promise">> {
-  const members = await api.query.elections.members<any[]>();
+  const members = await (api.query.electionsPhragmen || api.query.elections || api.query.phragmenElection).members<any[]>();
   const councilThreshold = Math.ceil(members.length * 0.6);
   const proposal = isReject ? api.tx.treasury.rejectProposal(id) : api.tx.treasury.approveProposal(id);
   return api.tx.council.propose(councilThreshold, proposal, proposal.length);

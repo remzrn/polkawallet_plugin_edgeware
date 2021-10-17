@@ -1,4 +1,3 @@
-import "@babel/polyfill";
 import { WsProvider, ApiPromise } from "@polkadot/api";
 import { spec } from '@edgeware/node-types';
 import { subscribeMessage, getNetworkConst, getNetworkProperties } from "./service/setting";

@@ -32,6 +32,7 @@ export async function getNetworkConst(api: ApiPromise) {
  */
 export async function getNetworkProperties(api: ApiPromise) {
   return {
+
         ss58Format: 7,
         tokenDecimals: [18],
         tokenSymbol: ["EDG"],
